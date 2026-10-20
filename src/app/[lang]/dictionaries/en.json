@@ -1,0 +1,32 @@
+{
+  "meta": {
+    "title": "Shahar Kibudi · Full stack developer",
+    "description": "I build what you design: custom websites, stores and the systems behind them."
+  },
+  "header": {
+    "name": "Shahar Kibudi",
+    "navLabel": "Main",
+    "nav": {
+      "work": "Work",
+      "services": "Services",
+      "about": "About",
+      "contact": "Contact"
+    },
+    "languageLabel": "Language",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "hero": {
+    "eyebrow": "Full stack developer · Israel",
+    "titleLead": "I build what",
+    "titleAccent": "you design.",
+    "body": "I used to build with my hands on construction sites. Now I build what designers draw: custom websites, stores and the systems behind them, line for line from your design.",
+    "primaryCta": "See the work",
+    "secondaryCta": "Work with me"
+  },
+  "notFound": {
+    "title": "This page isn't built yet.",
+    "body": "The page you were looking for doesn't exist.",
+    "home": "Back to the home page"
+  }
+}

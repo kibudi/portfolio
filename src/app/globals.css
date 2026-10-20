@@ -1,26 +1,37 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+ * Royal Builder design tokens. Colors and fonts come from the agreed canvas
+ * (navy ground, gold accent, ivory text). Hebrew pages swap the two font
+ * families, because Cormorant Garamond and Inter have no Hebrew glyphs.
+ */
+@theme {
+  --color-navy: #0b1220;
+  --color-navy-raised: #121b2e;
+  --color-gold: #c9a45c;
+  --color-gold-bright: #e2c27f;
+  --color-ivory: #f3eee3;
+  --color-sand: #d9d2c3;
+  --color-muted: #b9b2a3;
+  --color-faint: #8f887a;
+  --color-line: rgb(201 164 92 / 0.25);
+
+  --font-display: var(--font-cormorant), Georgia, serif;
+  --font-body: var(--font-inter), system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html[lang="he"] {
+  --font-display: var(--font-frank-ruhl), Georgia, serif;
+  --font-body: var(--font-heebo), system-ui, sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-navy);
+  color: var(--color-ivory);
+  font-family: var(--font-body);
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-navy);
 }

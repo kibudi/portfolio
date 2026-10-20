@@ -1,0 +1,56 @@
+import Link from "next/link";
+import type { Dictionary } from "@/app/[lang]/dictionaries";
+import type { Locale } from "@/i18n";
+import { ArchMark } from "./ArchMark";
+import { LanguageSwitch } from "./LanguageSwitch";
+import { MobileMenu } from "./MobileMenu";
+
+export type NavItem = { href: string; label: string };
+
+/**
+ * Site header: logo, section links and the language switch on desktop;
+ * logo, language switch and a menu button on phones.
+ */
+export function Header({ locale, copy }: { locale: Locale; copy: Dictionary["header"] }) {
+  const items: NavItem[] = [
+    { href: "#work", label: copy.nav.work },
+    { href: "#services", label: copy.nav.services },
+    { href: "#about", label: copy.nav.about },
+    { href: "#contact", label: copy.nav.contact },
+  ];
+
+  return (
+    <header className="sticky top-0 z-40 border-b border-line bg-navy/90 backdrop-blur">
+      <div className="mx-auto flex h-18 max-w-[1440px] items-center justify-between px-5 md:h-22 md:px-12 xl:px-24">
+        <Link href={`/${locale}`} className="flex items-center gap-3 text-gold">
+          <ArchMark />
+          <span className="font-display text-xl font-semibold tracking-wide text-ivory md:text-2xl">
+            {copy.name}
+          </span>
+        </Link>
+
+        <nav aria-label={copy.navLabel} className="hidden md:block">
+          <ul className="flex gap-10 text-[13px] uppercase tracking-[0.18em]">
+            {items.map((item) => (
+              <li key={item.href}>
+                <a href={item.href} className="text-sand transition-colors hover:text-gold">
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <div className="flex items-center gap-1">
+          <LanguageSwitch current={locale} label={copy.languageLabel} />
+          <MobileMenu
+            items={items}
+            navLabel={copy.navLabel}
+            openLabel={copy.openMenu}
+            closeLabel={copy.closeMenu}
+          />
+        </div>
+      </div>
+    </header>
+  );
+}

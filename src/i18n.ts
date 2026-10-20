@@ -1,0 +1,14 @@
+/**
+ * Supported languages and the helpers shared by the proxy and layouts.
+ * English is the default; Hebrew renders right to left.
+ */
+export const locales = ["en", "he"] as const;
+
+export type Locale = (typeof locales)[number];
+
+export const defaultLocale: Locale = "en";
+
+/** Narrows a route segment to a supported locale. */
+export function hasLocale(value: string): value is Locale {
+  return (locales as readonly string[]).includes(value);
+}
