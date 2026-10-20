@@ -1,25 +1,18 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { defaultLocale, hasLocale, type Locale } from "@/i18n";
 
-/**
- * Picks Hebrew when the browser lists it (`he`, or the legacy `iw`) before
- * English, otherwise the default locale.
- */
+/** Prefers the first supported language in the browser's language header. */
 function preferredLocale(request: NextRequest): Locale {
-  const header = request.headers.get("accept-language") ?? "";
-  for (const part of header.split(",")) {
-    const tag = part.split(";")[0].trim().toLowerCase();
-    if (tag.startsWith("he") || tag.startsWith("iw")) return "he";
-    if (tag.startsWith("en")) return "en";
+  const acceptLanguageHeader = request.headers.get("accept-language") ?? "";
+  for (const languagePreference of acceptLanguageHeader.split(",")) {
+    const languageTag = languagePreference.split(";")[0].trim().toLowerCase();
+    if (languageTag.startsWith("he") || languageTag.startsWith("iw")) return "he";
+    if (languageTag.startsWith("en")) return "en";
   }
   return defaultLocale;
 }
 
-/**
- * Sends any path without a language prefix to the visitor's preferred
- * language, so `/` becomes `/en` or `/he`. The answer depends on the
- * Accept-Language header, so the redirect says so in `Vary`.
- */
+/** Redirects unlocalized paths based on Accept-Language and varies the cache. */
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   if (hasLocale(pathname.split("/")[1] ?? "")) return;

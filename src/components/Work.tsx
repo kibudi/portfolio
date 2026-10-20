@@ -5,11 +5,6 @@ import { site } from "@/site";
 import { OliveBranch } from "./OliveBranch";
 import { SectionLabel } from "./SectionLabel";
 
-/**
- * Selected work in the original Figma's card shape: huntpilot as the large
- * featured card (screenshot uses mock data), and two cards for the projects
- * that come next, each with the gold olive branch in its corner.
- */
 export function Work({ copy }: { copy: Dictionary["work"] }) {
   const { featured } = copy;
 

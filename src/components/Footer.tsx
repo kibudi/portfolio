@@ -15,13 +15,6 @@ const socials = [
   },
 ];
 
-/**
- * Footer in the original Figma's shape: logo and a short line on one side,
- * a row of social buttons under it, and the gold arch on the other side;
- * the credit to the original design runs along the bottom. The buttons
- * copy the Figma's style (a filled circle holding a thin ring and the
- * icon), recoloured gold and navy; they brighten on hover and focus.
- */
 export function Footer({ name, copy }: { name: string; copy: Dictionary["footer"] }) {
   return (
     <footer className="border-t border-line bg-navy-raised">

@@ -1,7 +1,4 @@
-/**
- * Supported languages and the helpers shared by the proxy and layouts.
- * English is the default; Hebrew renders right to left.
- */
+/** Supported locales and shared locale helpers. */
 export const locales = ["en", "he"] as const;
 
 export type Locale = (typeof locales)[number];

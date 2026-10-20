@@ -1,9 +1,3 @@
-/**
- * The logo mark: a gold arch on two columns with a keystone, inside a thin
- * circle, with blueprint crosshair ticks at the four compass points.
- * Colors follow `currentColor`. The browser tab icon (app/icon.svg) is the
- * same arch without the ticks, which would vanish at that size.
- */
 export function ArchMark() {
   return (
     <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true" className="shrink-0">

@@ -8,34 +8,26 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export const alt = "Shahar Kibudi · I build what you design";
 
-const fonts = join(process.cwd(), "node_modules/@fontsource");
-const cormorant = await readFile(join(fonts, "cormorant-garamond/files/cormorant-garamond-latin-500-normal.woff"));
-const cormorantItalic = await readFile(join(fonts, "cormorant-garamond/files/cormorant-garamond-latin-500-italic.woff"));
-const frankRuhl = await readFile(join(fonts, "frank-ruhl-libre/files/frank-ruhl-libre-hebrew-500-normal.woff"));
+const fontPackageDirectory = join(process.cwd(), "node_modules/@fontsource");
+const cormorant = await readFile(join(fontPackageDirectory, "cormorant-garamond/files/cormorant-garamond-latin-500-normal.woff"));
+const cormorantItalic = await readFile(join(fontPackageDirectory, "cormorant-garamond/files/cormorant-garamond-latin-500-italic.woff"));
+const frankRuhl = await readFile(join(fontPackageDirectory, "frank-ruhl-libre/files/frank-ruhl-libre-hebrew-500-normal.woff"));
 
 export function generateStaticParams() {
-  return locales.map((lang) => ({ lang }));
+  return locales.map((locale) => ({ lang: locale }));
 }
 
-/**
- * Lays Hebrew out right to left for the image renderer, which draws text
- * left to right only. The copy lines are all Hebrew, so reversing the
- * characters is enough.
- */
-function visual(text: string, rtl: boolean): string {
-  return rtl ? [...text].reverse().join("") : text;
+/** Reverses Hebrew text for the left-to-right image renderer. */
+function getVisualText(text: string, isRightToLeft: boolean): string {
+  return isRightToLeft ? [...text].reverse().join("") : text;
 }
 
-/**
- * The preview card shown when the link is shared: the hero title, the gold
- * sun and arch, and the name, in the page's language.
- */
 export default async function Image({ params }: { params: Promise<{ lang: string }> }) {
-  const { lang } = await params;
-  const locale = hasLocale(lang) ? lang : "en";
-  const dict = getDictionary(locale);
-  const rtl = locale === "he";
-  const display = rtl ? "Frank Ruhl Libre" : "Cormorant Garamond";
+  const { lang: routeLocale } = await params;
+  const locale = hasLocale(routeLocale) ? routeLocale : "en";
+  const dictionary = getDictionary(locale);
+  const isRightToLeft = locale === "he";
+  const displayFont = isRightToLeft ? "Frank Ruhl Libre" : "Cormorant Garamond";
 
   return new ImageResponse(
     (
@@ -44,7 +36,7 @@ export default async function Image({ params }: { params: Promise<{ lang: string
           width: "100%",
           height: "100%",
           display: "flex",
-          flexDirection: rtl ? "row-reverse" : "row",
+          flexDirection: isRightToLeft ? "row-reverse" : "row",
           alignItems: "center",
           justifyContent: "space-between",
           padding: "0 90px",
@@ -56,27 +48,27 @@ export default async function Image({ params }: { params: Promise<{ lang: string
           style={{
             display: "flex",
             flexDirection: "column",
-            alignItems: rtl ? "flex-end" : "flex-start",
+            alignItems: isRightToLeft ? "flex-end" : "flex-start",
             gap: 28,
           }}
         >
-          <div style={{ fontFamily: display, fontSize: 92, lineHeight: 1, display: "flex" }}>
-            {visual(dict.hero.titleLead, rtl)}
+          <div style={{ fontFamily: displayFont, fontSize: 92, lineHeight: 1, display: "flex" }}>
+            {getVisualText(dictionary.hero.titleLead, isRightToLeft)}
           </div>
           <div
             style={{
-              fontFamily: display,
-              fontStyle: rtl ? "normal" : "italic",
+              fontFamily: displayFont,
+              fontStyle: isRightToLeft ? "normal" : "italic",
               fontSize: 92,
               lineHeight: 1,
               color: "#C9A45C",
               display: "flex",
             }}
           >
-            {visual(dict.hero.titleAccent, rtl)}
+            {getVisualText(dictionary.hero.titleAccent, isRightToLeft)}
           </div>
-          <div style={{ fontFamily: display, fontSize: 34, color: "#B9B2A3", marginTop: 24, display: "flex" }}>
-            {visual(dict.header.name, rtl)}
+          <div style={{ fontFamily: displayFont, fontSize: 34, color: "#B9B2A3", marginTop: 24, display: "flex" }}>
+            {getVisualText(dictionary.header.name, isRightToLeft)}
           </div>
         </div>
         <svg width="380" height="420" viewBox="0 0 560 600">

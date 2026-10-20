@@ -1,10 +1,6 @@
 @import "tailwindcss";
 
-/*
- * Royal Builder design tokens. Colors and fonts come from the agreed canvas
- * (navy ground, gold accent, ivory text). Hebrew pages swap the two font
- * families, because Cormorant Garamond and Inter have no Hebrew glyphs.
- */
+/* Design tokens; Hebrew routes override the font families below. */
 @theme {
   --color-navy: #0b1220;
   --color-navy-raised: #121b2e;
@@ -31,10 +27,7 @@ body {
   font-family: var(--font-body);
 }
 
-/*
- * Shared layout: the page gutter used by every full-width block, and the
- * vertical rhythm of the sections below the hero.
- */
+/* Shared page gutter and section spacing. */
 @utility page-x {
   margin-inline: auto;
   width: 100%;
@@ -55,10 +48,7 @@ body {
   }
 }
 
-/*
- * The card shape from the original Figma: soft rounded corners, a raised
- * navy surface and a deep shadow instead of a border.
- */
+/* Shared raised card surface. */
 @utility card {
   position: relative;
   overflow: hidden;
@@ -67,13 +57,7 @@ body {
   box-shadow: 0 24px 48px -16px rgb(0 0 0 / 0.65);
 }
 
-/*
- * Hero opening. The text rises in with CSS from the first paint, so the
- * main content never waits for JavaScript (it is what the browser measures
- * as the largest paint). The arch drawing stays hidden until HeroMotion
- * draws it; if that script never runs, the delayed animation shows it
- * after 2.5 s anyway. Reduced motion shows everything at once.
- */
+/* CSS reveals keep hero text visible even if animation JavaScript fails. */
 @media (prefers-reduced-motion: no-preference) {
   [data-hero-motion] svg {
     visibility: hidden;

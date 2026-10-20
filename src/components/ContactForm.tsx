@@ -9,25 +9,20 @@ const fieldClass =
   "h-12 border-0 border-b border-gold/75 bg-transparent text-base text-ivory transition-colors focus:border-gold";
 const labelClass = "flex flex-col gap-2 text-[13px] uppercase tracking-[0.12em] text-sand";
 
-/**
- * Name, email and message, posted as JSON to /api/contact. The hidden
- * "company" field is a honeypot: people never see it, bots fill it in.
- * The result is announced through a polite live region.
- */
 export function ContactForm({ copy }: { copy: Dictionary["contact"] }) {
   const [status, setStatus] = useState<Status>("idle");
 
-  async function submit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
     setStatus("sending");
     try {
-      const response = await fetch("/api/contact", {
+      const submissionResponse = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(Object.fromEntries(new FormData(form))),
       });
-      if (!response.ok) throw new Error(String(response.status));
+      if (!submissionResponse.ok) throw new Error(String(submissionResponse.status));
       form.reset();
       setStatus("sent");
     } catch {
@@ -36,7 +31,7 @@ export function ContactForm({ copy }: { copy: Dictionary["contact"] }) {
   }
 
   return (
-    <form onSubmit={submit} className="flex flex-col gap-5">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-5">
       <label className={labelClass}>
         {copy.fields.name}
         <input name="name" type="text" autoComplete="name" required maxLength={100} className={fieldClass} />

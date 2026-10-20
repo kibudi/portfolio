@@ -7,12 +7,8 @@ import { MobileMenu } from "./MobileMenu";
 
 export type NavItem = { href: string; label: string };
 
-/**
- * Site header: logo, section links and the language switch on desktop;
- * logo, language switch and a menu button on phones.
- */
 export function Header({ locale, copy }: { locale: Locale; copy: Dictionary["header"] }) {
-  const items: NavItem[] = [
+  const navigationItems: NavItem[] = [
     { href: "#work", label: copy.nav.work },
     { href: "#services", label: copy.nav.services },
     { href: "#about", label: copy.nav.about },
@@ -31,7 +27,7 @@ export function Header({ locale, copy }: { locale: Locale; copy: Dictionary["hea
 
         <nav aria-label={copy.navLabel} className="hidden md:block">
           <ul className="flex gap-10 text-[13px] uppercase tracking-[0.18em]">
-            {items.map((item) => (
+            {navigationItems.map((item) => (
               <li key={item.href}>
                 <a href={item.href} className="text-sand transition-colors hover:text-gold">
                   {item.label}
@@ -44,7 +40,7 @@ export function Header({ locale, copy }: { locale: Locale; copy: Dictionary["hea
         <div className="flex items-center gap-1">
           <LanguageSwitch current={locale} label={copy.languageLabel} />
           <MobileMenu
-            items={items}
+            items={navigationItems}
             navLabel={copy.navLabel}
             openLabel={copy.openMenu}
             closeLabel={copy.closeMenu}

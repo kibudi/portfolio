@@ -3,10 +3,6 @@ import { Accent } from "./Accent";
 import { ContactForm } from "./ContactForm";
 import { SectionLabel } from "./SectionLabel";
 
-/**
- * Contact block: the form on one side, a raised panel with location and
- * reply time on the other, with the gold arch drawn faintly behind it.
- */
 export function Contact({ copy }: { copy: Dictionary["contact"] }) {
   return (
     <section id="contact" className="page-x section-y">

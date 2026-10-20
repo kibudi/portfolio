@@ -26,43 +26,39 @@ const frankRuhl = Frank_Ruhl_Libre({
 const heebo = Heebo({ subsets: ["hebrew", "latin"], variable: "--font-heebo", preload: false });
 
 export function generateStaticParams() {
-  return locales.map((lang) => ({ lang }));
+  return locales.map((locale) => ({ lang: locale }));
 }
 
 export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Promise<Metadata> {
-  const { lang } = await params;
-  if (!hasLocale(lang)) return {};
-  const dict = getDictionary(lang);
+  const { lang: locale } = await params;
+  if (!hasLocale(locale)) return {};
+  const dictionary = getDictionary(locale);
   return {
     metadataBase: site.url,
-    title: dict.meta.title,
-    description: dict.meta.description,
+    title: dictionary.meta.title,
+    description: dictionary.meta.description,
     alternates: {
-      canonical: `/${lang}`,
+      canonical: `/${locale}`,
       languages: { en: "/en", he: "/he", "x-default": "/" },
     },
-    openGraph: { locale: lang === "he" ? "he_IL" : "en_US" },
+    openGraph: { locale: locale === "he" ? "he_IL" : "en_US" },
   };
 }
 
-/**
- * Root layout for both languages: sets `lang` and `dir` on <html>, loads the
- * font families as CSS variables, and renders the shared header. Only the
- * English fonts are preloaded; Hebrew ones load on demand with `swap`.
- */
+/** Sets the locale, fonts, and shared header for each language route. */
 export default async function RootLayout({ children, params }: LayoutProps<"/[lang]">) {
-  const { lang } = await params;
-  if (!hasLocale(lang)) notFound();
-  const dict = getDictionary(lang);
+  const { lang: locale } = await params;
+  if (!hasLocale(locale)) notFound();
+  const dictionary = getDictionary(locale);
 
   return (
     <html
-      lang={lang}
-      dir={lang === "he" ? "rtl" : "ltr"}
+      lang={locale}
+      dir={locale === "he" ? "rtl" : "ltr"}
       className={`${cormorant.variable} ${inter.variable} ${frankRuhl.variable} ${heebo.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
-        <Header locale={lang} copy={dict.header} />
+        <Header locale={locale} copy={dictionary.header} />
         {children}
       </body>
     </html>

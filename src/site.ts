@@ -1,8 +1,4 @@
-/**
- * The site's own address and the public links shown on it. Vercel sets the
- * production domain; locally the address falls back to the dev server.
- * Email and phone are left out until Shahar decides which to publish.
- */
+/** Canonical site address and public profile links. */
 export const site = {
   url: process.env.VERCEL_PROJECT_PRODUCTION_URL
     ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`

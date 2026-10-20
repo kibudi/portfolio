@@ -3,10 +3,6 @@ import { AboutColumn } from "./AboutColumn";
 import { Accent } from "./Accent";
 import { SectionLabel } from "./SectionLabel";
 
-/**
- * The construction-to-code story with three facts, beside the Ionic column
- * drawing (hidden on phones).
- */
 export function About({ copy }: { copy: Dictionary["about"] }) {
   return (
     <section id="about" className="page-x section-y grid items-center gap-12 lg:grid-cols-12">

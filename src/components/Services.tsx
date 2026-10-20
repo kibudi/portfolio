@@ -7,11 +7,6 @@ const icons = [
   "M24 6 C25 16 32 23 42 24 C32 25 25 32 24 42 C23 32 16 25 6 24 C16 23 23 16 24 6 Z M38 8 V14 M35 11 H41",
 ];
 
-/**
- * Three service cards in the shape of the original Figma's "Why hire us"
- * cards: numeral, title and text on one side, and a gold sun holding a line
- * icon (pen nib, shopping bag, spark) peeking in from the far edge.
- */
 export function Services({ copy }: { copy: Dictionary["services"] }) {
   return (
     <section id="services" className="page-x section-y flex flex-col gap-12">
@@ -21,7 +16,7 @@ export function Services({ copy }: { copy: Dictionary["services"] }) {
         <p className="max-w-[640px] text-base leading-relaxed text-muted md:text-lg">{copy.lead}</p>
       </div>
       <ul className="grid gap-6 lg:grid-cols-3">
-        {copy.items.map((item, index) => (
+        {copy.items.map((item, serviceIndex) => (
           <li
             key={item.title}
             data-scroll="up"
@@ -40,7 +35,7 @@ export function Services({ copy }: { copy: Dictionary["services"] }) {
             >
               <circle cx="75" cy="75" r="70" fill="currentColor" fillOpacity="0.14" stroke="currentColor" strokeOpacity="0.5" />
               <path
-                d={icons[index]}
+                d={icons[serviceIndex]}
                 transform="translate(39 39) scale(1.5)"
                 fill="none"
                 stroke="currentColor"

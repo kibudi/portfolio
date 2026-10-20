@@ -1,13 +1,8 @@
-const axis = 244;
-const flutes = [222, 233, 244, 255, 266];
-const eggs = Array.from({ length: 8 }, (_, i) => 200 + i * 11);
+const columnCenterX = 244;
+const shaftFluteXPositions = [222, 233, 244, 255, 266];
+const capitalEggCount = 8;
 
-/**
- * The About drawing: one Ionic column in front of the gold sun circle, as
- * blueprint line art, with a height dimension beside it. Every line is a
- * separate path, rect or circle so ScrollMotion can draw it in when the
- * section comes into view. Colors follow `currentColor`.
- */
+/** Blueprint drawing; individual SVG shapes let ScrollMotion draw it on entry. */
 export function AboutColumn() {
   return (
     <svg
@@ -19,18 +14,18 @@ export function AboutColumn() {
       data-scroll="draw"
       className="text-gold"
     >
-      <circle cx={axis} cy="192" r="118" fill="currentColor" fillOpacity="0.06" stroke="currentColor" strokeWidth="1.2" />
+      <circle cx={columnCenterX} cy="192" r="118" fill="currentColor" fillOpacity="0.06" stroke="currentColor" strokeWidth="1.2" />
       <g fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round">
         <path d="M181 132 H307 L301 142 H187 Z" />
         <rect x="190" y="142" width="108" height="8" />
-        <path d={`M196 158 ${eggs.map(() => "q5.5 9 11 0").join(" ")}`} />
+        <path d={`M196 158 ${Array.from({ length: capitalEggCount }, () => "q5.5 9 11 0").join(" ")}`} />
         <circle cx="195" cy="176" r="15" />
         <circle cx="293" cy="176" r="15" />
         <path d="M195 176 m-8 0 a8 8 0 1 0 8 -8 a5 5 0 1 1 -5 5 M293 176 m8 0 a8 8 0 1 1 -8 -8 a5 5 0 1 0 5 5" />
         <path d="M210 170 H278 M210 182 H278" />
         <rect x="207" y="190" width="74" height="9" />
         <rect x="212" y="199" width="64" height="446" />
-        <path d={flutes.map((x) => `M${x} 206 V639`).join(" ")} />
+        <path d={shaftFluteXPositions.map((fluteX) => `M${fluteX} 206 V639`).join(" ")} />
         <rect x="200" y="645" width="88" height="10" rx="5" />
         <rect x="206" y="655" width="76" height="7" />
         <rect x="197" y="662" width="94" height="12" rx="6" />

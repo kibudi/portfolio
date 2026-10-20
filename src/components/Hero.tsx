@@ -3,14 +3,6 @@ import { Accent } from "./Accent";
 import { HeroArch } from "./HeroArch";
 import { HeroMotion } from "./HeroMotion";
 
-/**
- * Top of the page: eyebrow, the two-line title with the gold accent, the
- * construction-to-code intro, two calls to action, and the blueprint arch.
- * On phones the arch sits above the text; on desktop it sits beside it (on
- * the left in Hebrew, since the grid follows the text direction).
- * `data-reveal` marks the text that rises in with CSS (globals.css); the
- * <noscript> style keeps the arch visible when JavaScript is off.
- */
 export function Hero({ copy }: { copy: Dictionary["hero"] }) {
   return (
     <HeroMotion>

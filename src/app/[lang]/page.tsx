@@ -9,24 +9,23 @@ import { Work } from "@/components/Work";
 import { hasLocale } from "@/i18n";
 import { getDictionary } from "./dictionaries";
 
-/** The one-page site, top to bottom. */
 export default async function Home({ params }: PageProps<"/[lang]">) {
-  const { lang } = await params;
-  if (!hasLocale(lang)) notFound();
-  const dict = getDictionary(lang);
+  const { lang: locale } = await params;
+  if (!hasLocale(locale)) notFound();
+  const dictionary = getDictionary(locale);
 
   return (
     <>
       <main className="flex-1">
-        <Hero copy={dict.hero} />
+        <Hero copy={dictionary.hero} />
         <ScrollMotion>
-          <About copy={dict.about} />
-          <Services copy={dict.services} />
-          <Work copy={dict.work} />
-          <Contact copy={dict.contact} />
+          <About copy={dictionary.about} />
+          <Services copy={dictionary.services} />
+          <Work copy={dictionary.work} />
+          <Contact copy={dictionary.contact} />
         </ScrollMotion>
       </main>
-      <Footer name={dict.header.name} copy={dict.footer} />
+      <Footer name={dictionary.header.name} copy={dictionary.footer} />
     </>
   );
 }

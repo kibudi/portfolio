@@ -1,20 +1,14 @@
 const leafCount = 9;
 
-/**
- * A gold olive branch growing from the bottom corner, the theme's version
- * of the bamboo in the original Figma's cards. Leaves alternate sides along
- * a curved stem and get smaller toward the tip. Decorative only; colors
- * follow `currentColor`.
- */
 export function OliveBranch({ className }: { className: string }) {
-  const leaves = Array.from({ length: leafCount }, (_, i) => {
-    const t = (i + 1) / (leafCount + 1);
-    const x = 190 - 170 * t;
-    const y = 200 - 185 * t + 40 * t * (1 - t);
-    const side = i % 2 === 0 ? 1 : -1;
-    const length = 46 - 22 * t;
-    const angle = -50 + side * 38;
-    return { x, y, length, angle };
+  const leaves = Array.from({ length: leafCount }, (_, leafIndex) => {
+    const positionAlongStem = (leafIndex + 1) / (leafCount + 1);
+    const leafX = 190 - 170 * positionAlongStem;
+    const leafY = 200 - 185 * positionAlongStem + 40 * positionAlongStem * (1 - positionAlongStem);
+    const leafSide = leafIndex % 2 === 0 ? 1 : -1;
+    const leafLength = 46 - 22 * positionAlongStem;
+    const leafAngle = -50 + leafSide * 38;
+    return { x: leafX, y: leafY, length: leafLength, angle: leafAngle };
   });
 
   return (

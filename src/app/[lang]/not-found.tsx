@@ -3,10 +3,9 @@ import { lang } from "next/root-params";
 import { defaultLocale, hasLocale } from "@/i18n";
 import { getDictionary } from "./dictionaries";
 
-/** 404 page inside the site's layout, in the visitor's language. */
 export default async function NotFound() {
-  const value = await lang();
-  const locale = hasLocale(value) ? value : defaultLocale;
+  const routeLocale = await lang();
+  const locale = hasLocale(routeLocale) ? routeLocale : defaultLocale;
   const copy = getDictionary(locale).notFound;
 
   return (
