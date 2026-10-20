@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { Cormorant_Garamond, Frank_Ruhl_Libre, Heebo, Inter } from "next/font/google";
 import { Header } from "@/components/Header";
 import { hasLocale, locales } from "@/i18n";
+import { site } from "@/site";
 import { getDictionary } from "./dictionaries";
 import "../globals.css";
 
@@ -24,14 +25,6 @@ const frankRuhl = Frank_Ruhl_Libre({
 
 const heebo = Heebo({ subsets: ["hebrew", "latin"], variable: "--font-heebo", preload: false });
 
-/**
- * Public address used to make metadata links absolute. Vercel sets the
- * production domain; locally it falls back to the dev server.
- */
-const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
-  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-  : "http://localhost:3000";
-
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
 }
@@ -41,7 +34,7 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
   if (!hasLocale(lang)) return {};
   const dict = getDictionary(lang);
   return {
-    metadataBase: siteUrl,
+    metadataBase: site.url,
     title: dict.meta.title,
     description: dict.meta.description,
     alternates: {
