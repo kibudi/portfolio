@@ -27,6 +27,7 @@ export function ScrollMotion({ children }: { children: ReactNode }) {
         const risers = q("[data-scroll='up']");
         const drawings = q("[data-scroll='draw']");
         const lines = (svg: Element) => svg.querySelectorAll("path, rect, circle");
+        const isDrawing = (element: Element) => drawings.includes(element as HTMLElement);
 
         gsap.set(risers, { autoAlpha: 0, y: 32 });
         drawings.forEach((svg) => gsap.set(lines(svg), { drawSVG: 0 }));
@@ -43,13 +44,13 @@ export function ScrollMotion({ children }: { children: ReactNode }) {
             }
 
             for (const target of passed) {
-              if (drawings.includes(target)) gsap.set(lines(target), { drawSVG: "100%" });
+              if (isDrawing(target)) gsap.set(lines(target), { drawSVG: "100%" });
               else gsap.set(target, { autoAlpha: 1, y: 0 });
             }
 
-            const enteringRisers = entering.filter((target) => !drawings.includes(target));
-            gsap.to(enteringRisers, { autoAlpha: 1, y: 0, duration: 0.9, stagger: 0.12, ease: "power3.out" });
-            for (const svg of entering.filter((target) => drawings.includes(target))) {
+            const enteringRisers = entering.filter((target) => !isDrawing(target));
+            if (enteringRisers.length) gsap.to(enteringRisers, { autoAlpha: 1, y: 0, duration: 0.9, stagger: 0.12, ease: "power3.out" });
+            for (const svg of entering.filter(isDrawing)) {
               gsap.to(lines(svg), { drawSVG: "100%", duration: 1.4, stagger: 0.08, ease: "power2.inOut" });
             }
           },
