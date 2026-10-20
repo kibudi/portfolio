@@ -28,5 +28,99 @@
     "title": "This page isn't built yet.",
     "body": "The page you were looking for doesn't exist.",
     "home": "Back to the home page"
+  },
+  "about": {
+    "label": "About",
+    "titleLead": "From building sites",
+    "titleAccent": "to building websites.",
+    "paragraphs": [
+      "Before code, I built with my hands: a year on construction sites, and months installing sound and lighting systems. That taught me to read a plan and build it exactly, on time.",
+      "Then I finished a full stack bootcamp at the top of my cohort, and spent a year as a developer at a cybersecurity startup, building product screens, backend services and the integrations behind them."
+    ],
+    "stats": [
+      {
+        "value": "1 yr",
+        "label": "on construction sites"
+      },
+      {
+        "value": "Top",
+        "label": "of my bootcamp cohort"
+      },
+      {
+        "value": "6",
+        "label": "third-party APIs integrated"
+      }
+    ]
+  },
+  "services": {
+    "label": "Services",
+    "title": "What I build for designers",
+    "lead": "You keep the client and the creative. I handle the build, so you can take on bigger projects.",
+    "items": [
+      {
+        "numeral": "I.",
+        "title": "Design to code",
+        "body": "Your Figma built exactly, on every screen size, with scroll and hover motion that makes it feel alive.",
+        "tags": "Landing pages · Portfolios · Brand sites"
+      },
+      {
+        "numeral": "II.",
+        "title": "Stores and systems",
+        "body": "Online stores, bookings and forms connected to the tools your client already runs on, including Israeli ones.",
+        "tags": "E-commerce · Booking · CRM"
+      },
+      {
+        "numeral": "III.",
+        "title": "AI and automation",
+        "body": "Smart features and automations that answer leads, sort requests and save your client hours every week.",
+        "tags": "AI features · WhatsApp · n8n"
+      }
+    ]
+  },
+  "work": {
+    "label": "Selected work",
+    "title": "Built, not just drawn",
+    "github": "GitHub",
+    "featured": {
+      "kind": "Web app · Personal project",
+      "title": "huntpilot",
+      "body": "A job tracker that sweeps company career boards on a schedule and keeps only the roles worth applying to: 1,026 postings in, 7 out.",
+      "tags": "Dashboard · Discord bot · Scheduled sweeps",
+      "imageAlt": "The huntpilot board: open roles with company, title, location and days listed",
+      "cta": "View the code"
+    },
+    "upcoming": [
+      {
+        "kind": "Design to code",
+        "title": "Your project could be next",
+        "body": "Have a design waiting to be built? This spot is yours."
+      },
+      {
+        "kind": "Automation",
+        "title": "Lead reply demo",
+        "body": "Every new lead answered in under 5 minutes. Coming soon."
+      }
+    ]
+  },
+  "contact": {
+    "label": "Contact",
+    "titleLead": "Have a design?",
+    "titleAccent": "Let's build it.",
+    "fields": {
+      "name": "Name",
+      "email": "Email",
+      "message": "About the project"
+    },
+    "send": "Send",
+    "sending": "Sending…",
+    "sent": "Thanks, your message is on its way. I'll reply within one working day.",
+    "failed": "Something went wrong. Please try again in a minute.",
+    "basedInLabel": "Based in",
+    "basedIn": "Rishon LeZion, Israel",
+    "reply": "I reply within one working day, in Hebrew or English."
+  },
+  "footer": {
+    "credit": "Layout inspired by a Figma Community design",
+    "social": "Social links"
   }
 }
