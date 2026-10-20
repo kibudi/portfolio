@@ -44,10 +44,6 @@
         "label": "accessibility score on this site (Google Lighthouse)"
       },
       {
-        "value": "EN · עב",
-        "label": "bilingual, right-to-left built in"
-      },
-      {
         "value": "30 days",
         "label": "of bug fixes after launch"
       }
