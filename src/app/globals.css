@@ -56,15 +56,36 @@ body {
 }
 
 /*
- * The hero starts hidden only when motion is allowed, so HeroMotion can
- * reveal it without a flash of the final state. If the script never runs
- * (a failed download or hydration error), the delayed animation shows it
- * after 2.5 s anyway. Reduced motion shows it immediately.
+ * Hero opening. The text rises in with CSS from the first paint, so the
+ * main content never waits for JavaScript (it is what the browser measures
+ * as the largest paint). The arch drawing stays hidden until HeroMotion
+ * draws it; if that script never runs, the delayed animation shows it
+ * after 2.5 s anyway. Reduced motion shows everything at once.
  */
 @media (prefers-reduced-motion: no-preference) {
-  [data-hero-motion] {
+  [data-hero-motion] svg {
     visibility: hidden;
     animation: hero-failsafe 0s 2.5s forwards;
+  }
+
+  [data-reveal] {
+    animation: hero-rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  [data-reveal="title"] {
+    animation-delay: 0.15s;
+  }
+  [data-reveal="body"] {
+    animation-delay: 0.4s;
+  }
+  [data-reveal="actions"] {
+    animation-delay: 0.55s;
+  }
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
   }
 }
 

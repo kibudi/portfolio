@@ -8,14 +8,14 @@ import { HeroMotion } from "./HeroMotion";
  * construction-to-code intro, two calls to action, and the blueprint arch.
  * On phones the arch sits above the text; on desktop it sits beside it (on
  * the left in Hebrew, since the grid follows the text direction).
- * `data-reveal` marks what HeroMotion animates; the <noscript> style keeps
- * the hero visible when JavaScript is off.
+ * `data-reveal` marks the text that rises in with CSS (globals.css); the
+ * <noscript> style keeps the arch visible when JavaScript is off.
  */
 export function Hero({ copy }: { copy: Dictionary["hero"] }) {
   return (
     <HeroMotion>
       <noscript>
-        <style>{"[data-hero-motion]{visibility:visible!important}"}</style>
+        <style>{"[data-hero-motion] svg{visibility:visible!important}"}</style>
       </noscript>
       <section
         id="top"
