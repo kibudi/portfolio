@@ -2,11 +2,13 @@ import Image from "next/image";
 import type { Dictionary } from "@/app/[lang]/dictionaries";
 import huntpilotBoard from "@/assets/huntpilot-board.jpg";
 import { site } from "@/site";
+import { OliveBranch } from "./OliveBranch";
 import { SectionLabel } from "./SectionLabel";
 
 /**
- * Selected work: huntpilot as the large featured card (screenshot uses mock
- * data), and two dashed cards for the projects that come next.
+ * Selected work in the original Figma's card shape: huntpilot as the large
+ * featured card (screenshot uses mock data), and two cards for the projects
+ * that come next, each with the gold olive branch in its corner.
  */
 export function Work({ copy }: { copy: Dictionary["work"] }) {
   const { featured } = copy;
@@ -29,9 +31,9 @@ export function Work({ copy }: { copy: Dictionary["work"] }) {
       <div className="grid gap-6 lg:grid-cols-2">
         <article
           data-scroll="up"
-          className="group flex flex-col gap-4 border border-line bg-navy-raised p-6 transition-colors hover:border-gold md:p-10 lg:row-span-2"
+          className="card group flex flex-col gap-4 p-6 md:p-10 lg:row-span-2"
         >
-          <div className="overflow-hidden border border-line">
+          <div className="overflow-hidden rounded-xl">
             <Image
               src={huntpilotBoard}
               alt={featured.imageAlt}
@@ -58,11 +60,12 @@ export function Work({ copy }: { copy: Dictionary["work"] }) {
           <article
             key={card.title}
             data-scroll="up"
-            className="flex min-h-[260px] flex-col justify-end gap-3 border border-dashed border-gold/45 bg-navy-raised p-6 md:p-10"
+            className="card flex min-h-[260px] flex-col justify-end gap-3 p-6 md:p-10"
           >
-            <p className="text-[13px] uppercase tracking-[0.2em] text-gold">{card.kind}</p>
-            <h3 className="font-display text-[34px] font-semibold leading-tight">{card.title}</h3>
-            <p className="text-[15px] text-muted">{card.body}</p>
+            <OliveBranch className="pointer-events-none absolute -end-2 -bottom-2 w-44 text-gold opacity-25 rtl:-scale-x-100" />
+            <p className="relative text-[13px] uppercase tracking-[0.2em] text-gold">{card.kind}</p>
+            <h3 className="relative font-display text-[34px] font-semibold leading-tight">{card.title}</h3>
+            <p className="relative text-[15px] text-muted">{card.body}</p>
           </article>
         ))}
       </div>

@@ -10,7 +10,7 @@ import { SectionLabel } from "./SectionLabel";
 export function Contact({ copy }: { copy: Dictionary["contact"] }) {
   return (
     <section id="contact" className="page-x section-y">
-      <div data-scroll="up" className="grid overflow-hidden border border-gold/35 lg:grid-cols-2">
+      <div data-scroll="up" className="card grid lg:grid-cols-2">
         <div className="flex flex-col gap-5 p-6 md:p-16">
           <SectionLabel>{copy.label}</SectionLabel>
           <h2 className="mb-2 font-display text-[40px] font-medium leading-[1.05] md:text-[52px]">
@@ -18,7 +18,7 @@ export function Contact({ copy }: { copy: Dictionary["contact"] }) {
           </h2>
           <ContactForm copy={copy} />
         </div>
-        <div className="relative flex min-h-[320px] flex-col justify-between gap-10 overflow-hidden bg-navy-raised p-6 md:p-16">
+        <div className="relative flex min-h-[320px] flex-col justify-between gap-10 overflow-hidden bg-navy/60 p-6 md:p-16">
           <svg
             width="420"
             height="420"

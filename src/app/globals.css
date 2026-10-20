@@ -56,6 +56,18 @@ body {
 }
 
 /*
+ * The card shape from the original Figma: soft rounded corners, a raised
+ * navy surface and a deep shadow instead of a border.
+ */
+@utility card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background: var(--color-navy-raised);
+  box-shadow: 0 24px 48px -16px rgb(0 0 0 / 0.65);
+}
+
+/*
  * Hero opening. The text rises in with CSS from the first paint, so the
  * main content never waits for JavaScript (it is what the browser measures
  * as the largest paint). The arch drawing stays hidden until HeroMotion
