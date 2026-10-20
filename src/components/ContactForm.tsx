@@ -6,7 +6,7 @@ import type { Dictionary } from "@/app/[lang]/dictionaries";
 type Status = "idle" | "sending" | "sent" | "failed";
 
 const fieldClass =
-  "h-12 border-0 border-b border-gold/50 bg-transparent text-base text-ivory outline-none transition-colors focus:border-gold";
+  "h-12 border-0 border-b border-gold/75 bg-transparent text-base text-ivory transition-colors focus:border-gold";
 const labelClass = "flex flex-col gap-2 text-[13px] uppercase tracking-[0.12em] text-sand";
 
 /**
@@ -49,7 +49,12 @@ export function ContactForm({ copy }: { copy: Dictionary["contact"] }) {
         {copy.fields.message}
         <textarea name="message" rows={4} required maxLength={5000} className={`${fieldClass} h-auto resize-none py-3`} />
       </label>
-      <input name="company" type="text" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
+      <div aria-hidden="true" className="hidden">
+        <label>
+          Company
+          <input name="company" type="text" tabIndex={-1} autoComplete="off" />
+        </label>
+      </div>
       <button
         type="submit"
         disabled={status === "sending"}

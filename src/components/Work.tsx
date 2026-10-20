@@ -12,7 +12,7 @@ export function Work({ copy }: { copy: Dictionary["work"] }) {
   const { featured } = copy;
 
   return (
-    <section id="work" className="mx-auto flex w-full max-w-[1440px] flex-col gap-12 px-5 py-20 md:px-12 lg:py-30 xl:px-24">
+    <section id="work" className="page-x section-y flex flex-col gap-12">
       <div data-scroll="up" className="flex items-end justify-between gap-6">
         <div className="flex flex-col gap-4">
           <SectionLabel>{copy.label}</SectionLabel>

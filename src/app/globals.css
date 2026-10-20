@@ -32,14 +32,51 @@ body {
 }
 
 /*
+ * Shared layout: the page gutter used by every full-width block, and the
+ * vertical rhythm of the sections below the hero.
+ */
+@utility page-x {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 1440px;
+  padding-inline: 1.25rem;
+  @variant md {
+    padding-inline: 3rem;
+  }
+  @variant xl {
+    padding-inline: 6rem;
+  }
+}
+
+@utility section-y {
+  padding-block: 5rem;
+  @variant lg {
+    padding-block: 7.5rem;
+  }
+}
+
+/*
  * The hero starts hidden only when motion is allowed, so HeroMotion can
- * reveal it without a flash of the final state. Reduced motion shows it
- * immediately.
+ * reveal it without a flash of the final state. If the script never runs
+ * (a failed download or hydration error), the delayed animation shows it
+ * after 2.5 s anyway. Reduced motion shows it immediately.
  */
 @media (prefers-reduced-motion: no-preference) {
   [data-hero-motion] {
     visibility: hidden;
+    animation: hero-failsafe 0s 2.5s forwards;
   }
+}
+
+@keyframes hero-failsafe {
+  to {
+    visibility: visible;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
 }
 
 ::selection {

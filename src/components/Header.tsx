@@ -21,7 +21,7 @@ export function Header({ locale, copy }: { locale: Locale; copy: Dictionary["hea
 
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-navy/90 backdrop-blur">
-      <div className="mx-auto flex h-18 max-w-[1440px] items-center justify-between px-5 md:h-22 md:px-12 xl:px-24">
+      <div className="page-x flex h-18 items-center justify-between md:h-22">
         <Link href={`/${locale}`} className="flex items-center gap-3 text-gold">
           <ArchMark />
           <span className="font-display text-xl font-semibold tracking-wide text-ivory md:text-2xl">

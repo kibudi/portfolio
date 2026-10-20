@@ -1,4 +1,5 @@
 import type { Dictionary } from "@/app/[lang]/dictionaries";
+import { Accent } from "./Accent";
 import { HeroArch } from "./HeroArch";
 import { HeroMotion } from "./HeroMotion";
 
@@ -18,7 +19,7 @@ export function Hero({ copy }: { copy: Dictionary["hero"] }) {
       </noscript>
       <section
         id="top"
-        className="mx-auto grid w-full max-w-[1440px] items-center gap-8 px-5 pt-8 pb-16 md:px-12 lg:grid-cols-2 lg:gap-12 lg:pt-16 xl:px-24"
+        className="page-x grid items-center gap-8 pt-8 pb-16 lg:grid-cols-2 lg:gap-12 lg:pt-16"
       >
         <div className="order-2 flex flex-col gap-5 lg:order-1 lg:gap-7">
           <p
@@ -31,9 +32,7 @@ export function Hero({ copy }: { copy: Dictionary["hero"] }) {
             data-reveal="title"
             className="font-display text-[56px] font-medium leading-[0.95] md:text-[80px] xl:text-[104px]"
           >
-            {copy.titleLead}
-            <br />
-            <span className="italic text-gold rtl:not-italic">{copy.titleAccent}</span>
+            <Accent lead={copy.titleLead} accent={copy.titleAccent} />
           </h1>
           <p data-reveal="body" className="max-w-[480px] text-base leading-relaxed text-muted md:text-lg">
             {copy.body}
@@ -54,7 +53,7 @@ export function Hero({ copy }: { copy: Dictionary["hero"] }) {
           </div>
         </div>
         <div className="order-1 flex justify-center lg:order-2">
-          <HeroArch className="w-[280px] md:w-[420px] xl:w-[560px]" />
+          <HeroArch className="w-[280px] text-gold md:w-[420px] xl:w-[560px]" />
         </div>
       </section>
     </HeroMotion>

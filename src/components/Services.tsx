@@ -4,7 +4,7 @@ import { SectionLabel } from "./SectionLabel";
 /** Three numbered service cards; the middle one is lightly tinted gold. */
 export function Services({ copy }: { copy: Dictionary["services"] }) {
   return (
-    <section id="services" className="mx-auto flex w-full max-w-[1440px] flex-col gap-12 px-5 py-20 md:px-12 lg:py-30 xl:px-24">
+    <section id="services" className="page-x section-y flex flex-col gap-12">
       <div data-scroll="up" className="flex flex-col items-center gap-4 text-center">
         <SectionLabel>{copy.label}</SectionLabel>
         <h2 className="font-display text-[40px] font-medium leading-tight md:text-[64px]">{copy.title}</h2>
