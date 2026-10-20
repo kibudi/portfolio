@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Shahar Kibudi · Full stack developer",
-    "description": "I build what you design: custom websites, stores and the systems behind them."
+    "description": "Send me your design and get it back built: websites, stores and the systems behind them, on every screen, under your name."
   },
   "header": {
     "name": "Shahar Kibudi",
@@ -17,12 +17,13 @@
     "closeMenu": "Close menu"
   },
   "hero": {
-    "eyebrow": "Full stack developer · Israel",
+    "eyebrow": "Full stack developer for designers · Israel",
     "titleLead": "I build what",
     "titleAccent": "you design.",
-    "body": "I used to build with my hands on construction sites. Now I build what designers draw: custom websites, stores and the systems behind them, line for line from your design.",
+    "body": "Send me the Figma. You get it back built exactly as drawn, working on every screen, with the forms, store and systems behind it. You keep the client and the credit.",
     "primaryCta": "See the work",
-    "secondaryCta": "Work with me"
+    "secondaryCta": "Send me your design",
+    "availability": "Open for new projects. Replies within one working day."
   },
   "notFound": {
     "title": "This page isn't built yet.",
@@ -31,51 +32,52 @@
   },
   "about": {
     "label": "About",
-    "titleLead": "From building sites",
-    "titleAccent": "to building websites.",
+    "titleLead": "Built for real customers,",
+    "titleAccent": "not just the demo.",
     "paragraphs": [
-      "Before code, I built with my hands: a year on construction sites, and months installing sound and lighting systems. That taught me to read a plan and build it exactly, on time.",
-      "Then I finished a full stack bootcamp at the top of my cohort, and spent a year as a developer at a cybersecurity startup, building product screens, backend services and the integrations behind them."
+      "For a year I was a full stack developer at a cybersecurity startup. I built the screens customers worked in, the services behind them, and the connections to six outside tools like Jira and GitHub. I also shipped an AI feature that turns plain text into search filters, and built the tests that checked its answers before launch.",
+      "Working with me is simple. You send the design, I tell you what it takes and when it's ready, and you hear from me before you need to ask. Every question gets an answer within one working day, in Hebrew or English."
     ],
     "stats": [
       {
         "value": "1 yr",
-        "label": "on construction sites"
-      },
-      {
-        "value": "Top",
-        "label": "of my bootcamp cohort"
+        "label": "shipping a live product"
       },
       {
         "value": "6",
-        "label": "third-party APIs integrated"
+        "label": "outside tools connected"
+      },
+      {
+        "value": "1 day",
+        "label": "to reply, Hebrew or English"
       }
     ]
   },
   "services": {
     "label": "Services",
-    "title": "What I build for designers",
-    "lead": "You keep the client and the creative. I handle the build, so you can take on bigger projects.",
+    "title": "What you can hand me",
+    "lead": "Give me the build and take on bigger projects. I test every screen size and hand it back ready to launch.",
     "items": [
       {
         "numeral": "I.",
         "title": "Design to code",
-        "body": "Your Figma built exactly, on every screen size, with scroll and hover motion that makes it feel alive.",
+        "body": "Your Figma built to the pixel on every screen size, with the motion you designed, not a simplified version of it.",
         "tags": "Landing pages · Portfolios · Brand sites"
       },
       {
         "numeral": "II.",
         "title": "Stores and systems",
-        "body": "Online stores, bookings and forms connected to the tools your client already runs on, including Israeli ones.",
+        "body": "Stores, bookings and forms wired to the payments, CRM and tools your client already uses, Israeli ones included.",
         "tags": "E-commerce · Booking · CRM"
       },
       {
         "numeral": "III.",
         "title": "AI and automation",
-        "body": "Smart features and automations that answer leads, sort requests and save your client hours every week.",
+        "body": "Automations that answer leads and sort requests on their own, so your client stops copying data by hand.",
         "tags": "AI features · WhatsApp · n8n"
       }
-    ]
+    ],
+    "terms": "Fixed price before I start · Your client never sees my name · You own the code · Bug fixes for 30 days after launch"
   },
   "work": {
     "label": "Selected work",
@@ -84,7 +86,7 @@
     "featured": {
       "kind": "Web app · Personal project",
       "title": "huntpilot",
-      "body": "A job tracker that sweeps company career boards on a schedule and keeps only the roles worth applying to: 1,026 postings in, 7 out.",
+      "body": "My own job tracker. It checks company career boards on a schedule, drops the noise and sends what's left to Discord: 1,026 postings in, 7 out.",
       "tags": "Dashboard · Discord bot · Scheduled sweeps",
       "imageAlt": "The huntpilot board: open roles with company, title, location and days listed",
       "cta": "View the code"
@@ -98,7 +100,7 @@
       {
         "kind": "Automation",
         "title": "Lead reply demo",
-        "body": "Every new lead answered in under 5 minutes. Coming soon."
+        "body": "An automation that answers every new lead within minutes. Coming soon."
       }
     ]
   },
@@ -109,7 +111,7 @@
     "fields": {
       "name": "Name",
       "email": "Email",
-      "message": "About the project"
+      "message": "About the project (a Figma link helps)"
     },
     "send": "Send",
     "sending": "Sending…",
@@ -117,10 +119,29 @@
     "failed": "Something went wrong. Please try again in a minute.",
     "basedInLabel": "Based in",
     "basedIn": "Rishon LeZion, Israel",
-    "reply": "I reply within one working day, in Hebrew or English."
+    "reply": "I reply within one working day, in Hebrew or English.",
+    "availability": "Open for new projects. Replies within one working day."
   },
   "footer": {
-    "tagline": "I build what you design: custom websites, stores and the systems behind them.",
+    "tagline": "You design it, I build it: websites, stores and the systems behind them.",
     "credit": "Layout inspired by a Figma Community design"
+  },
+  "process": {
+    "label": "How it works",
+    "title": "Three steps, no surprises",
+    "steps": [
+      {
+        "title": "Send the design",
+        "body": "A Figma link and a few lines about the project."
+      },
+      {
+        "title": "Get a price and a date",
+        "body": "A fixed quote and a delivery date before I write any code."
+      },
+      {
+        "title": "Review, then launch",
+        "body": "You follow the build on a live link and approve it before it goes out."
+      }
+    ]
   }
 }

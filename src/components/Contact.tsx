@@ -1,5 +1,6 @@
 import type { Dictionary } from "@/app/[lang]/dictionaries";
 import { Accent } from "./Accent";
+import { AvailabilityNote } from "./AvailabilityNote";
 import { ContactForm } from "./ContactForm";
 import { SectionLabel } from "./SectionLabel";
 
@@ -31,9 +32,12 @@ export function Contact({ copy }: { copy: Dictionary["contact"] }) {
               <path d="M193 72 L227 72 L221 104 L199 104 Z" />
             </g>
           </svg>
-          <div className="relative">
-            <p className="text-[13px] uppercase tracking-[0.2em] text-faint">{copy.basedInLabel}</p>
-            <p className="font-display text-3xl">{copy.basedIn}</p>
+          <div className="relative flex flex-col gap-8">
+            <AvailabilityNote text={copy.availability} />
+            <div>
+              <p className="text-[13px] uppercase tracking-[0.2em] text-faint">{copy.basedInLabel}</p>
+              <p className="font-display text-3xl">{copy.basedIn}</p>
+            </div>
           </div>
           <p className="relative text-[15px] text-muted">{copy.reply}</p>
         </div>

@@ -3,6 +3,7 @@ import { About } from "@/components/About";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
+import { Process } from "@/components/Process";
 import { ScrollMotion } from "@/components/ScrollMotion";
 import { Services } from "@/components/Services";
 import { Work } from "@/components/Work";
@@ -21,6 +22,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
         <ScrollMotion>
           <About copy={dictionary.about} />
           <Services copy={dictionary.services} />
+          <Process copy={dictionary.process} />
           <Work copy={dictionary.work} />
           <Contact copy={dictionary.contact} />
         </ScrollMotion>

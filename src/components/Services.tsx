@@ -32,6 +32,9 @@ export function Services({ copy }: { copy: Dictionary["services"] }) {
           </li>
         ))}
       </ul>
+      <p data-scroll="up" className="text-center text-xs uppercase leading-loose tracking-[0.16em] text-sand">
+        {copy.terms}
+      </p>
     </section>
   );
 }

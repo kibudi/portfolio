@@ -1,5 +1,6 @@
 import type { Dictionary } from "@/app/[lang]/dictionaries";
 import { Accent } from "./Accent";
+import { AvailabilityNote } from "./AvailabilityNote";
 import { HeroArch } from "./HeroArch";
 import { HeroMotion } from "./HeroMotion";
 
@@ -42,6 +43,9 @@ export function Hero({ copy }: { copy: Dictionary["hero"] }) {
             >
               {copy.secondaryCta}
             </a>
+          </div>
+          <div data-reveal="actions">
+            <AvailabilityNote text={copy.availability} />
           </div>
         </div>
         <div className="order-1 flex justify-center lg:order-2">
