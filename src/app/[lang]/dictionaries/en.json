@@ -76,9 +76,29 @@
     "terms": "Fixed price before I start · Your client never sees my name · You own the code · Bug fixes for 30 days after launch"
   },
   "work": {
-    "label": "Selected work",
-    "title": "Built, not just drawn",
+    "label": "Work",
+    "title": "What I can build for your clients",
+    "lead": "Three concept sites, each built from a real design and each showing a different part of the job.",
     "github": "GitHub",
+    "status": "In the studio · live demo soon",
+    "concepts": [
+      {
+        "kind": "Concept · Real estate",
+        "title": "Luxury residential tower",
+        "body": "The building told as you scroll, a live floor and apartment picker, and every lead sent to the sales team's CRM with an instant WhatsApp reply."
+      },
+      {
+        "kind": "Concept · AI startup",
+        "title": "Product launch site",
+        "body": "Motion that explains the product, a working \"ask the product\" AI chat, and demo requests that land in the CRM with an automatic email."
+      },
+      {
+        "kind": "Concept · Law firm",
+        "title": "Boutique law firm",
+        "body": "A calm, high-end Hebrew site with a step-by-step intake that sorts the case, books a consultation and follows up on its own."
+      }
+    ],
+    "alsoBuiltLabel": "Also built",
     "featured": {
       "kind": "Web app · Personal project",
       "title": "huntpilot",
@@ -86,19 +106,7 @@
       "tags": "Dashboard · Discord bot · Scheduled sweeps",
       "imageAlt": "The huntpilot board: open roles with company, title, location and days listed",
       "cta": "View the code"
-    },
-    "upcoming": [
-      {
-        "kind": "Design to code",
-        "title": "Your project could be next",
-        "body": "Have a design waiting to be built? This spot is yours."
-      },
-      {
-        "kind": "Automation",
-        "title": "Lead reply demo",
-        "body": "An automation that answers every new lead within minutes. Coming soon."
-      }
-    ]
+    }
   },
   "contact": {
     "label": "Contact",

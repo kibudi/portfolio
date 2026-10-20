@@ -27,6 +27,37 @@ function ClassicalColumn({ centerX }: { centerX: number }) {
   );
 }
 
+/** The arch itself (archivolt, keystone, two columns, stepped base) as separate shapes, shared by every arch drawing. */
+export function ArchStructure() {
+  return (
+    <>
+      {archRadii.map((radius) => (
+        <path key={radius} d={`M${archCenterX - radius} 220 A${radius} ${radius} 0 0 1 ${archCenterX + radius} 220`} />
+      ))}
+      <rect x="281" y="92" width="42" height="7" />
+      <path d="M285 99 L319 99 L312 141 L292 141 Z" />
+      <path d="M291 105 H313 M302 105 V135" />
+      <ClassicalColumn centerX={194} />
+      <ClassicalColumn centerX={410} />
+      <rect x="148" y="540" width="309" height="12" />
+      <rect x="128" y="552" width="349" height="11" />
+      <rect x="115" y="563" width="374" height="11" />
+    </>
+  );
+}
+
+/** The arch in front of the gold sun, without grid or measurements, for decorative spots. */
+export function ClassicalArch({ className }: { className: string }) {
+  return (
+    <svg viewBox="96 50 414 530" aria-hidden="true" className={className}>
+      <circle cx={archCenterX} cy="241" r="188" fill="currentColor" fillOpacity="0.07" stroke="currentColor" strokeWidth="1.2" />
+      <g fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round">
+        <ArchStructure />
+      </g>
+    </svg>
+  );
+}
+
 /** Blueprint SVG; HeroMotion animates its named `data-draw` groups in order. */
 export function HeroArch({ className }: { className: string }) {
   const verticalGridPositions = Array.from({ length: 22 }, (_, index) => 18 + index * gridSpacing);
@@ -48,17 +79,7 @@ export function HeroArch({ className }: { className: string }) {
       </g>
 
       <g data-draw="arch" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round">
-        {archRadii.map((radius) => (
-          <path key={radius} d={`M${archCenterX - radius} 220 A${radius} ${radius} 0 0 1 ${archCenterX + radius} 220`} />
-        ))}
-        <rect x="281" y="92" width="42" height="7" />
-        <path d="M285 99 L319 99 L312 141 L292 141 Z" />
-        <path d="M291 105 H313 M302 105 V135" />
-        <ClassicalColumn centerX={194} />
-        <ClassicalColumn centerX={410} />
-        <rect x="148" y="540" width="309" height="12" />
-        <rect x="128" y="552" width="349" height="11" />
-        <rect x="115" y="563" width="374" height="11" />
+        <ArchStructure />
       </g>
 
       <g data-draw="measures" fill="none" stroke="currentColor" strokeWidth="0.8">

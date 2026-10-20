@@ -1,6 +1,7 @@
 import type { Dictionary } from "@/app/[lang]/dictionaries";
 import { site } from "@/site";
 import { ArchMark } from "./ArchMark";
+import { ClassicalArch } from "./HeroArch";
 
 const socials = [
   {
@@ -42,16 +43,7 @@ export function Footer({ name, copy }: { name: string; copy: Dictionary["footer"
             ))}
           </ul>
         </div>
-        <svg width="120" height="150" viewBox="0 0 340 420" aria-hidden="true" className="hidden text-gold opacity-70 md:block">
-          <circle cx="170" cy="150" r="110" fill="currentColor" fillOpacity="0.10" stroke="currentColor" strokeWidth="2" />
-          <g fill="none" stroke="currentColor" strokeWidth="3">
-            <path d="M70 180 A100 100 0 0 1 270 180" />
-            <path d="M105 180 A65 65 0 0 1 235 180" />
-            <rect x="70" y="180" width="35" height="200" />
-            <rect x="235" y="180" width="35" height="200" />
-            <rect x="50" y="380" width="240" height="16" />
-          </g>
-        </svg>
+        <ClassicalArch className="hidden w-[130px] text-gold opacity-70 md:block" />
       </div>
       <div className="border-t border-line">
         <div className="page-x py-5 text-[13px] text-faint">

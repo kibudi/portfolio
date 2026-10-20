@@ -2,6 +2,7 @@ import type { Dictionary } from "@/app/[lang]/dictionaries";
 import { Accent } from "./Accent";
 import { AvailabilityNote } from "./AvailabilityNote";
 import { ContactForm } from "./ContactForm";
+import { ClassicalArch } from "./HeroArch";
 import { SectionLabel } from "./SectionLabel";
 
 export function Contact({ copy }: { copy: Dictionary["contact"] }) {
@@ -16,22 +17,7 @@ export function Contact({ copy }: { copy: Dictionary["contact"] }) {
           <ContactForm copy={copy} />
         </div>
         <div className="relative flex min-h-[320px] flex-col justify-between gap-10 overflow-hidden bg-navy/60 p-6 md:p-16">
-          <svg
-            width="420"
-            height="420"
-            viewBox="0 0 420 420"
-            aria-hidden="true"
-            className="pointer-events-none absolute -end-15 -bottom-10 text-gold opacity-80"
-          >
-            <circle cx="210" cy="190" r="170" fill="currentColor" fillOpacity="0.10" stroke="currentColor" strokeWidth="1" />
-            <g fill="none" stroke="currentColor" strokeWidth="1.4">
-              <path d="M70 220 A140 140 0 0 1 350 220" />
-              <path d="M112 220 A98 98 0 0 1 308 220" />
-              <rect x="70" y="220" width="42" height="180" />
-              <rect x="308" y="220" width="42" height="180" />
-              <path d="M193 72 L227 72 L221 104 L199 104 Z" />
-            </g>
-          </svg>
+          <ClassicalArch className="pointer-events-none absolute -end-16 -bottom-12 w-[380px] text-gold opacity-70" />
           <div className="relative flex flex-col gap-8">
             <AvailabilityNote text={copy.availability} />
             <div>
