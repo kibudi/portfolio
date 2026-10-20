@@ -40,16 +40,16 @@
     ],
     "stats": [
       {
-        "value": "1 yr",
-        "label": "shipping a live product"
+        "value": "100",
+        "label": "accessibility score on this site (Google Lighthouse)"
       },
       {
-        "value": "6",
-        "label": "outside tools connected"
+        "value": "EN · עב",
+        "label": "bilingual, right-to-left built in"
       },
       {
-        "value": "1 day",
-        "label": "to reply, Hebrew or English"
+        "value": "30 days",
+        "label": "of bug fixes after launch"
       }
     ]
   },
