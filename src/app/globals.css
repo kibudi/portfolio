@@ -31,6 +31,17 @@ body {
   font-family: var(--font-body);
 }
 
+/*
+ * The hero starts hidden only when motion is allowed, so HeroMotion can
+ * reveal it without a flash of the final state. Reduced motion shows it
+ * immediately.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  [data-hero-motion] {
+    visibility: hidden;
+  }
+}
+
 ::selection {
   background: var(--color-gold);
   color: var(--color-navy);
