@@ -6,6 +6,7 @@ import { Hero } from "@/components/Hero";
 import { Process } from "@/components/Process";
 import { ScrollMotion } from "@/components/ScrollMotion";
 import { Services } from "@/components/Services";
+import { TermsStrip } from "@/components/TermsStrip";
 import { Work } from "@/components/Work";
 import { hasLocale } from "@/i18n";
 import { getDictionary } from "./dictionaries";
@@ -19,11 +20,12 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
     <>
       <main className="flex-1">
         <Hero copy={dictionary.hero} />
+        <TermsStrip terms={dictionary.services.terms} />
         <ScrollMotion>
-          <About copy={dictionary.about} />
           <Services copy={dictionary.services} />
           <Process copy={dictionary.process} />
           <Work copy={dictionary.work} />
+          <About copy={dictionary.about} />
           <Contact copy={dictionary.contact} />
         </ScrollMotion>
       </main>

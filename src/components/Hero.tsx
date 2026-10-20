@@ -32,13 +32,13 @@ export function Hero({ copy }: { copy: Dictionary["hero"] }) {
           </p>
           <div data-reveal="actions" className="mt-2 flex flex-col gap-3 sm:flex-row sm:gap-4">
             <a
-              href="#work"
+              href="#contact"
               className="flex h-13 items-center justify-center bg-gold px-7 text-sm font-medium uppercase tracking-[0.12em] text-navy transition-colors hover:bg-gold-bright"
             >
               {copy.primaryCta}
             </a>
             <a
-              href="#contact"
+              href="#work"
               className="flex h-13 items-center justify-center border border-gold px-7 text-sm font-medium uppercase tracking-[0.12em] text-gold transition-colors hover:bg-gold hover:text-navy"
             >
               {copy.secondaryCta}

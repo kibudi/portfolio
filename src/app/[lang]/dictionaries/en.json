@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Shahar Kibudi · Full stack developer",
-    "description": "Send me your design and get it back built: websites, stores and the systems behind them, on every screen, under your name."
+    "title": "Shahar Kibudi · Figma to code developer for designers",
+    "description": "Send your Figma and get a working, responsive site with forms and integrations, built under your name. Fixed price up front, 30 days of bug fixes."
   },
   "header": {
     "name": "Shahar Kibudi",
@@ -17,12 +17,12 @@
     "closeMenu": "Close menu"
   },
   "hero": {
-    "eyebrow": "Full stack developer for designers · Israel",
+    "eyebrow": "Web developer for designers and studios · Israel",
     "titleLead": "I build what",
     "titleAccent": "you design.",
-    "body": "Send me the Figma. You get it back built exactly as drawn, working on every screen, with the forms, store and systems behind it. You keep the client and the credit.",
-    "primaryCta": "See the work",
-    "secondaryCta": "Send me your design",
+    "body": "Send me the Figma and get back a working site, exactly as drawn, on every screen, with the forms and tools behind it. Your client and your credit stay with you.",
+    "primaryCta": "Send a Figma link",
+    "secondaryCta": "See the work",
     "availability": "Open for new projects. Replies within one working day."
   },
   "notFound": {
@@ -32,11 +32,11 @@
   },
   "about": {
     "label": "About",
-    "titleLead": "Built for real customers,",
-    "titleAccent": "not just the demo.",
+    "titleLead": "I've shipped for real users,",
+    "titleAccent": "not just for Dribbble.",
     "paragraphs": [
       "For a year I was a full stack developer at a cybersecurity startup. I built the screens customers worked in, the services behind them, and the connections to six outside tools like Jira and GitHub. I also shipped an AI feature that turns plain text into search filters, and built the tests that checked its answers before launch.",
-      "Working with me is simple. You send the design, I tell you what it takes and when it's ready, and you hear from me before you need to ask. Every question gets an answer within one working day, in Hebrew or English."
+      "Working with me is simple. You send the design, I tell you what it takes and when it's ready, and you hear from me before you need to ask."
     ],
     "stats": [
       {
@@ -52,7 +52,7 @@
   "services": {
     "label": "Services",
     "title": "What you can hand me",
-    "lead": "Give me the build and take on bigger projects. I test every screen size and hand it back ready to launch.",
+    "lead": "Say yes to bigger projects without hiring a developer. I test every screen size and hand it back ready to launch.",
     "items": [
       {
         "numeral": "I.",
@@ -62,9 +62,9 @@
       },
       {
         "numeral": "II.",
-        "title": "Stores and systems",
-        "body": "Stores, bookings and forms wired to the payments, CRM and tools your client already uses, Israeli ones included.",
-        "tags": "E-commerce · Booking · CRM"
+        "title": "Forms, bookings and integrations",
+        "body": "Bookings and forms wired to the payments, CRM and tools your client already uses.",
+        "tags": "Booking · Lead forms · CRM"
       },
       {
         "numeral": "III.",
@@ -78,9 +78,9 @@
   "work": {
     "label": "Work",
     "title": "What I can build for your clients",
-    "lead": "Three concept sites, each built from a real design and each showing a different part of the job.",
+    "lead": "Three concept sites built from Figma Community designs: a designer's file turned into a working site.",
     "github": "GitHub",
-    "status": "In the studio · live demo soon",
+    "status": "In progress · live link soon",
     "concepts": [
       {
         "kind": "Concept · Real estate",
@@ -100,9 +100,9 @@
     ],
     "alsoBuiltLabel": "Also built",
     "featured": {
-      "kind": "Web app · Personal project",
+      "kind": "Automation · Personal project",
       "title": "huntpilot",
-      "body": "My own job tracker. It checks company career boards on a schedule, drops the noise and sends what's left to Discord: 1,026 postings in, 7 out.",
+      "body": "My own automation tool. It checks company career boards on a schedule, filters out the noise and sends only what matters to Discord.",
       "tags": "Dashboard · Discord bot · Scheduled sweeps",
       "imageAlt": "The huntpilot board: open roles with company, title, location and days listed",
       "cta": "View the code"
@@ -117,17 +117,16 @@
       "email": "Email",
       "message": "About the project (a Figma link helps)"
     },
-    "send": "Send",
+    "send": "Get a price and a date",
     "sending": "Sending…",
     "sent": "Thanks, your message is on its way. I'll reply within one working day.",
     "failed": "Something went wrong. Please try again in a minute.",
     "basedInLabel": "Based in",
     "basedIn": "Rishon LeZion, Israel",
-    "reply": "I reply within one working day, in Hebrew or English.",
-    "availability": "Open for new projects. Replies within one working day."
+    "reply": "Hebrew or English, whichever you prefer."
   },
   "footer": {
-    "tagline": "You design it, I build it: websites, stores and the systems behind them.",
+    "tagline": "You design it, I build it: working sites with the forms and tools behind them.",
     "credit": "Layout inspired by a Figma Community design"
   },
   "process": {

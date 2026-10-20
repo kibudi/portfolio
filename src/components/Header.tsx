@@ -9,9 +9,9 @@ export type NavItem = { href: string; label: string };
 
 export function Header({ locale, copy }: { locale: Locale; copy: Dictionary["header"] }) {
   const navigationItems: NavItem[] = [
-    { href: "#about", label: copy.nav.about },
     { href: "#services", label: copy.nav.services },
     { href: "#work", label: copy.nav.work },
+    { href: "#about", label: copy.nav.about },
     { href: "#contact", label: copy.nav.contact },
   ];
 
