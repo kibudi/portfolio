@@ -28,7 +28,8 @@ export function Work({ copy }: { copy: Dictionary["work"] }) {
           data-scroll="up"
           className="card group flex flex-col gap-4 p-6 md:p-10 lg:row-span-2"
         >
-          <div className="overflow-hidden rounded-xl">
+          <span aria-hidden="true" className="pointer-events-none absolute inset-2.5 rounded-xl border border-gold/35" />
+          <div className="relative overflow-hidden rounded-xl">
             <Image
               src={huntpilotBoard}
               alt={featured.imageAlt}
@@ -57,6 +58,7 @@ export function Work({ copy }: { copy: Dictionary["work"] }) {
             data-scroll="up"
             className="card flex min-h-[260px] flex-col justify-end gap-3 p-6 md:p-10"
           >
+            <span aria-hidden="true" className="pointer-events-none absolute inset-2.5 rounded-xl border border-gold/35" />
             <OliveBranch className="pointer-events-none absolute -end-2 -bottom-2 w-44 text-gold opacity-25 rtl:-scale-x-100" />
             <p className="relative text-[13px] uppercase tracking-[0.2em] text-gold">{card.kind}</p>
             <h3 className="relative font-display text-[34px] font-semibold leading-tight">{card.title}</h3>

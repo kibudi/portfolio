@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Cormorant_Garamond, Frank_Ruhl_Libre, Heebo, Inter } from "next/font/google";
 import { Header } from "@/components/Header";
+import { SmoothAnchorScroll } from "@/components/SmoothAnchorScroll";
 import { hasLocale, locales } from "@/i18n";
 import { site } from "@/site";
 import { getDictionary } from "./dictionaries";
@@ -60,6 +61,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
       <body className="flex min-h-full flex-col">
         <Header locale={locale} copy={dictionary.header} />
         {children}
+        <SmoothAnchorScroll />
       </body>
     </html>
   );

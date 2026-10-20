@@ -21,6 +21,10 @@ html[lang="he"] {
   --font-body: var(--font-heebo), system-ui, sans-serif;
 }
 
+html {
+  scroll-padding-top: 5.5rem;
+}
+
 body {
   background: var(--color-navy);
   color: var(--color-ivory);
@@ -89,6 +93,10 @@ body {
   to {
     visibility: visible;
   }
+}
+
+[tabindex="-1"]:focus {
+  outline: none;
 }
 
 :focus-visible {
