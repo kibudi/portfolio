@@ -27,8 +27,8 @@ export function HeroMotion({ children }: { children: ReactNode }) {
           .set(q("svg"), { visibility: "visible" })
           .from(q("[data-draw='sun']"), { autoAlpha: 0, scale: 0.9, transformOrigin: "50% 42%", duration: 1.4 })
           .from(q("[data-draw='grid']"), { autoAlpha: 0, duration: 1 }, 0.2)
-          .from(q("[data-draw='arch'] > *"), { drawSVG: 0, duration: 1.3, stagger: 0.07, ease: "power2.inOut" }, 0.4)
-          .from(q("[data-draw='measures'] > *"), { drawSVG: 0, duration: 0.8, stagger: 0.1 }, 1.4)
+          .from(q("[data-draw='arch'] > *"), { drawSVG: 0, duration: 1.2, stagger: 0.035, ease: "power2.inOut" }, 0.4)
+          .from(q("[data-draw='measures'] > *"), { drawSVG: 0, duration: 0.8, stagger: 0.08 }, 1.5)
           .from(q("[data-draw='labels']"), { autoAlpha: 0, duration: 0.6 }, 1.8);
       });
       return () => media.revert();
