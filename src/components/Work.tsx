@@ -2,7 +2,7 @@ import Image from "next/image";
 import type { Dictionary } from "@/app/[lang]/dictionaries";
 import huntpilotBoard from "@/assets/huntpilot-board.jpg";
 import { site } from "@/site";
-import { ConceptDrawing } from "./ConceptDrawing";
+import { ConceptPreview } from "./ConceptPreview";
 import { OliveBranch } from "./OliveBranch";
 import { SectionLabel } from "./SectionLabel";
 
@@ -31,13 +31,11 @@ export function Work({ copy }: { copy: Dictionary["work"] }) {
           <li
             key={concept.title}
             data-scroll="up"
-            className="card flex min-h-[460px] flex-col gap-3 p-8 transition-transform duration-300 hover:-translate-y-1"
+            className="card group flex min-h-[460px] flex-col gap-3 p-8 transition-transform duration-300 hover:-translate-y-1"
           >
             <span aria-hidden="true" className="pointer-events-none absolute inset-2.5 rounded-xl border border-gold/35" />
             <OliveBranch className="pointer-events-none absolute -end-2 -bottom-2 w-36 text-gold opacity-15 rtl:-scale-x-100" />
-            <div className="relative mb-4 flex justify-center rounded-lg bg-navy/60 py-6">
-              <ConceptDrawing conceptIndex={conceptIndex} />
-            </div>
+            <ConceptPreview conceptIndex={conceptIndex} />
             <p className="relative text-[13px] uppercase tracking-[0.2em] text-gold">{concept.kind}</p>
             <h3 className="relative font-display text-[30px] font-semibold leading-tight">{concept.title}</h3>
             <p className="relative text-[15px] leading-[1.6] text-muted">{concept.body}</p>
