@@ -16,7 +16,7 @@ export function About({ copy }: { copy: Dictionary["about"] }) {
             {paragraph}
           </p>
         ))}
-        <dl className="mt-4 grid grid-cols-3 gap-4 md:gap-6">
+        <dl className="mt-4 grid gap-6 sm:grid-cols-3 sm:gap-4 md:gap-6">
           {copy.stats.map((stat) => (
             <div key={stat.label} className="flex flex-col-reverse border-t border-gold/40 pt-4">
               <dt className="text-sm text-muted">{stat.label}</dt>
