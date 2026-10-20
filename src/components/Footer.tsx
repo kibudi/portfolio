@@ -17,9 +17,10 @@ const socials = [
 
 /**
  * Footer in the original Figma's shape: logo and a short line on one side,
- * a row of square gold-outlined social buttons under it, and the gold arch
- * on the other side; the credit to the original design runs along the
- * bottom. Buttons fill gold on hover and focus.
+ * a row of social buttons under it, and the gold arch on the other side;
+ * the credit to the original design runs along the bottom. The buttons
+ * copy the Figma's style (a filled circle holding a thin ring and the
+ * icon), recoloured gold and navy; they brighten on hover and focus.
  */
 export function Footer({ name, copy }: { name: string; copy: Dictionary["footer"] }) {
   return (
@@ -37,10 +38,11 @@ export function Footer({ name, copy }: { name: string; copy: Dictionary["footer"
                 <a
                   href={social.href}
                   aria-label={social.name}
-                  className="flex size-11 items-center justify-center border border-gold text-gold transition-colors hover:bg-gold hover:text-navy focus-visible:bg-gold focus-visible:text-navy"
+                  className="flex size-11 items-center justify-center rounded-full bg-gold text-navy transition-colors hover:bg-gold-bright focus-visible:bg-gold-bright"
                 >
-                  <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d={social.path} fill="currentColor" />
+                  <svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10.4" fill="none" stroke="currentColor" strokeWidth="1.3" />
+                    <path d={social.path} fill="currentColor" transform="translate(7 7) scale(0.4167)" />
                   </svg>
                 </a>
               </li>
